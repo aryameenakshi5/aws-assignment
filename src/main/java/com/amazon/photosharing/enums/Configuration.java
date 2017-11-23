@@ -35,7 +35,7 @@ public enum Configuration {
 	/*
 	 * Ref. http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Endpoints.html
 	 */	
-	ELASTICACHE_CONFIG_ENDPOINT("photoaws.dunmsk.cfg.aps1.cache.amazonaws.com:11211"); 
+	ELASTICACHE_CONFIG_ENDPOINT("photoaws.dunmsk.cfg.aps1.cache.amazonaws.com"); 
 	
 	
 	private final String value;
