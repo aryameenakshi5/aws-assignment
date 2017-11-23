@@ -31,8 +31,8 @@
 <!-- 		url="jdbc:mysql://<YOUR RDS DNS>:3306/<YOUR RDS SCHEMA>" /> -->
 
 <!-- Online memcached for testing. Only available from EB --> 
-<!-- 	<Manager className="de.javakaffee.web.msm.MemcachedBackupSessionManager" sessionBackupAsync="false" sticky="false" -->
-<!-- 		memcachedNodes="<YOUR ELASTICACHE MEMCACHED NODE OR CLUSTER CONFIG>:11211" requestUriIgnorePattern=".*\.(ico|png|gif|jpg|css|js)$" /> -->
+ 	<Manager className="de.javakaffee.web.msm.MemcachedBackupSessionManager" sessionBackupAsync="false" sticky="false" 
+ 		memcachedNodes="photoaws.dunmsk.0001.aps1.cache.amazonaws.com:11211" requestUriIgnorePattern=".*\.(ico|png|gif|jpg|css|js)$" /> 
 
 <!-- 
 	For using auto discovery please provide the elasticache config endpoint ref. http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Endpoints.html 	
@@ -40,14 +40,14 @@
 
 	<Resource name="jdbc/PhotoSharingDB2" auth="Container"  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
 		type="javax.sql.DataSource" maxTotal="4" maxIdle="2" maxWaitMillis="10000" removeAbandoned="true" removeAbandonedTimeout="10" logAbandoned="true"
-		username="photosharing" password="password" driverClassName="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/photosharing" />
+		username="photoaws" password="12345678" driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://aafu9e7jzag7ox.cb2l24by6qta.ap-south-1.rds.amazonaws.com:3306/ebdb" />
 
 	<Realm className="org.apache.catalina.realm.LockOutRealm">
 
 		<Realm className="org.apache.catalina.realm.JDBCRealm"
-			driverName="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/photosharing"
-			connectionName="photosharing" connectionPassword="password"
+			driverName="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://aafu9e7jzag7ox.cb2l24by6qta.ap-south-1.rds.amazonaws.com:3306/ebdb"
+			connectionName="photoaws" connectionPassword="12345678"
 			userTable="user" userNameCol="user_id" userCredCol="password"
 			userRoleTable="role_mappings" roleNameCol="role" />
 	</Realm>
