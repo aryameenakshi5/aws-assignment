@@ -25,10 +25,10 @@
 		/> -->
 		
 <!-- 	Online RDS for testing -->
- 	<Resource name="jdbc/PhotoSharingDB2" auth="Container"  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
- 		type="javax.sql.DataSource" maxTotal="4" maxIdle="30" maxWaitMillis="10000" 
- 		username="photoaws" password="12345678" driverClassName="com.mysql.jdbc.Driver" testOnBorrow="true" validationQuery="SELECT 1"
- 		url="jdbc:mysql://aafu9e7jzag7ox.cb2l24by6qta.ap-south-1.rds.amazonaws.com:3306/ebdb" /> 
+<!--	<Resource name="jdbc/PhotoSharingDB2" auth="Container"  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" -->
+<!-- 		type="javax.sql.DataSource" maxTotal="4" maxIdle="30" maxWaitMillis="10000" -->
+<!-- 		username="photoaws" password="12345678" driverClassName="com.mysql.jdbc.Driver" testOnBorrow="true" validationQuery="SELECT 1"  -->
+<!-- 		url="jdbc:mysql://aafu9e7jzag7ox.cb2l24by6qta.ap-south-1.rds.amazonaws.com:3306/ebdb" /> -->
 
 <!-- Online memcached for testing. Only available from EB --> 
  	<Manager className="de.javakaffee.web.msm.MemcachedBackupSessionManager" sessionBackupAsync="false" sticky="false" 
